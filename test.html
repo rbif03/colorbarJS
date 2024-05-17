@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="colorbar_style.css">
+    <script src="colormap.js"></script>
+    <script src="colorbar.js"></script>
+
+</head>
+<body>
+    <!-- Make sure the colorbar container has a defined height, for example by setting it in CSS -->
+    <div id="colorbar" style="width: 80vw;height: 15vh;"></div>
+
+    <script>
+        const minValue = 0;
+        const maxValue = 10000;
+        const colorArray = ["AAFF00","#FFFF00", "#FF0000"]; // [yellow, orange, red]
+        const colorFormat = "hex";
+
+        const colorbarDivID = "colorbar";
+        const colorbarTitle = "Title!";
+        const nDivisions = 11;
+
+        var cmap = new ColorMap(minValue, maxValue, colorArray, colorFormat);
+
+        makeColorbar(colorbarDivID, colorbarTitle, nDivisions, cmap);
+    </script>
+</body>
+</html>
